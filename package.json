@@ -1,0 +1,25 @@
+{
+  "name": "webscraping-app",
+  "version": "0.0.1",
+  "description": "Webscraping app for monitoring items price in store",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SirCucumber/webscraping_app.git"
+  },
+  "author": "SirCucumber",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SirCucumber/webscraping_app/issues"
+  },
+  "homepage": "https://github.com/SirCucumber/webscraping_app#readme",
+  "dependencies": {
+    "cheerio": "*",
+    "cron": "^1.8.2",
+    "nodemailer": "^6.7.2",
+    "puppeteer": "^13.0.1"
+  }
+}
