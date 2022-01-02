@@ -1,4 +1,32 @@
 {
-  "Sennheiser HD 280 Pro": "https://www.citilink.ru/product/naushniki-sennheiser-hd-280-pro-3-5-mm-monitornye-chernyi-506845-590049/",
-  "Samsung Odyssey G5": "https://www.dns-shop.ru/product/0ac92a68c0ec3332/27-monitor-samsung-odyssey-g5-c27g55tqwi-cernyj/"
+  "citilink": {
+    "items": [
+      {
+        "name": "Sennheiser HD 280 Pro",
+        "url": "https://www.citilink.ru/product/naushniki-sennheiser-hd-280-pro-3-5-mm-monitornye-chernyi-506845-590049/",
+        "price": 7000
+      }
+    ],
+    "locator": ".ProductPrice__price.ProductHeader__price-default__price"
+  },
+  "dns": {
+    "items": [
+      {
+        "name": "Samsung Odyssey G5",
+        "url": "https://www.dns-shop.ru/product/0ac92a68c0ec3332/27-monitor-samsung-odyssey-g5-c27g55tqwi-cernyj/",
+        "price": 25000
+      }
+    ],
+    "locator": ".product-card-top__buy .product-buy__price"
+  },
+  "lingualeo": {
+    "items": [
+      {
+        "name": "LingueLeo 1 year Premium",
+        "url": "https://lingualeo.com/ru/premium-gift",
+        "price": 2000
+      }
+    ],
+    "locator": ".ll-leokit__button__content span"
+  }
 }

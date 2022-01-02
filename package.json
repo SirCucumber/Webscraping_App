@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/SirCucumber/webscraping_app#readme",
   "dependencies": {
-    "cheerio": "*",
     "cron": "^1.8.2",
     "nodemailer": "^6.7.2",
     "puppeteer": "^13.0.1"
