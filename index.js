@@ -2,6 +2,11 @@ const puppeteer = require("puppeteer");
 const CronJob = require("cron").CronJob;
 const nodemailer = require("nodemailer");
 const itemsList = require("./items.json");
+require("dotenv").config();
+const emailUserLogin = process.env.userLogin;
+const emailUserPassword = process.env.userPassword;
+const emailFromUser = process.env.fromUser;
+const emailToUser = process.env.toUser;
 
 async function configireBrowser(url) {
   const browser = await puppeteer.launch();
@@ -10,12 +15,15 @@ async function configireBrowser(url) {
   return page;
 }
 
+// TODO: Не работают локаторы DNS, выдают ошибку "Execution context was destroyed, most likely because of a navigation"
 async function checkPrice(page, item, locator) {
+  await page.waitForSelector(locator);
   let rublePrice = await page.$eval(locator, (el) => el.innerText);
   let currentPrice = await Number(rublePrice.replace(/[^0-9.-]+/g, ""));
 
   if (currentPrice < item.price) {
     console.log(`"Цена на ${item.name} упала до ${currentPrice}!`);
+    //    sendNotification(item.name + currentPrice);
   }
 }
 
@@ -39,5 +47,25 @@ async function startTracking() {
     });
   }
 }
+
+// async function sendNotification(price) {
+//   let transporter = nodemailer.createTransport({
+//     service: "gmail",
+//     auth: {
+//       user: emailUserLogin,
+//       pass: emailUserPassword,
+//     },
+//   });
+
+//   let textToSend = "Новый ценник: " + price;
+
+//   let info = await transporter.sendMail({
+//     from: "Price Tracker" + emailFromUser,
+//     to: emailToUser,
+//     subject: "Новая цена у товара!",
+//     text: textToSend,
+//   });
+//   console.log("Message sent: %s", info.messageId);
+// }
 
 startTracking();
