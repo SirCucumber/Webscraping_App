@@ -10,19 +10,13 @@
     "locator": ".ProductPrice__price.ProductHeader__price-default__price"
   },
   "dns": {
-    "items": [
-      {
-        "name": "Samsung Odyssey G5 ",
-        "url": "https://www.dns-shop.ru/product/0ac92a68c0ec3332/27-monitor-samsung-odyssey-g5-c27g55tqwi-cernyj/",
-        "price": 25000
-      }
-    ],
-    "locator": ".product-card-top__buy .product-buy__price"
+    "items": [],
+    "locator": ".product-card-tabs__product .product-buy__price"
   },
   "lingualeo": {
     "items": [
       {
-        "name": "LingueLeo 1 year Premium ",
+        "name": "LinguaLeo 1 year Premium ",
         "url": "https://lingualeo.com/ru/premium-gift",
         "price": 2000
       }
