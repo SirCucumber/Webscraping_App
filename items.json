@@ -10,8 +10,24 @@
     "locator": ".ProductPrice__price.ProductHeader__price-default__price"
   },
   "dns": {
-    "items": [],
+    "items": [
+      {
+        "name": "Монитор Samsung Odyssey G5 ",
+        "url": "https://www.dns-shop.ru/product/0ac92a68c0ec3332/27-monitor-samsung-odyssey-g5-c27g55tqwi-cernyj/",
+        "price": 25000
+      }
+    ],
     "locator": ".product-card-tabs__product .product-buy__price"
+  },
+  "udemy": {
+    "items": [
+      {
+        "name": "Cypress V9- UI Automation Testing + API Testing + Frameworks ",
+        "url": "https://www.udemy.com/course/cypress-io-master-class/",
+        "price": 2000
+      }
+    ],
+    "locator": ".sidebar-container--purchase-section--17KRp .udlite-sr-only"
   },
   "lingualeo": {
     "items": [

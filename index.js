@@ -9,7 +9,9 @@ const emailFromUser = process.env.fromUser;
 const emailToUser = process.env.toUser;
 
 async function configireBrowser(url, locator) {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    headless: false,
+  });
   const page = await browser.newPage();
   await page.goto(url);
   await page.waitForSelector(locator);
@@ -22,7 +24,7 @@ async function checkPrice(page, item, locator) {
 
   if (currentPrice < item.price) {
     console.log(`"Цена на ${item.name} упала до ${currentPrice}!`);
-    sendNotification(item.name + currentPrice);
+    // sendNotification(item.name + currentPrice);
   }
 }
 
@@ -50,24 +52,24 @@ async function startTracking() {
   }
 }
 
-async function sendNotification(price) {
-  let transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: emailUserLogin,
-      pass: emailUserPassword,
-    },
-  });
+// async function sendNotification(price) {
+//   let transporter = nodemailer.createTransport({
+//     service: "gmail",
+//     auth: {
+//       user: emailUserLogin,
+//       pass: emailUserPassword,
+//     },
+//   });
 
-  let textToSend = "Новый ценник: " + price;
+//   let textToSend = "Новый ценник: " + price;
 
-  let info = await transporter.sendMail({
-    from: "Price Tracker" + emailFromUser,
-    to: emailToUser,
-    subject: "Новая цена у товара!",
-    text: textToSend,
-  });
-  console.log("Message sent: %s", info.messageId);
-}
+//   let info = await transporter.sendMail({
+//     from: "Price Tracker" + emailFromUser,
+//     to: emailToUser,
+//     subject: "Новая цена у товара!",
+//     text: textToSend,
+//   });
+//   console.log("Message sent: %s", info.messageId);
+// }
 
 startTracking();
