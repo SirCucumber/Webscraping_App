@@ -1,6 +1,6 @@
 {
   "name": "webscraping-app",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Webscraping app for monitoring items price in store",
   "main": "index.js",
   "scripts": {

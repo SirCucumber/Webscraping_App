@@ -10,10 +10,19 @@ const emailToUser = process.env.toUser;
 
 async function configireBrowser(url, locator) {
   const browser = await puppeteer.launch({
-    headless: false,
+    headless: true,
   });
   const page = await browser.newPage();
   await page.goto(url);
+  // await page.setDefaultNavigationTimeout(60000);
+  // await page.setDefaultTimeout(60000);
+  // await Promise.all([page.waitForNavigation({ waitUntil: "load" })]);
+  // await page.waitForTimeout(120000);
+
+  // if (url.includes("dns")) {
+  //   page.click(".confirm-city-mobile__buttons .confirm-city-mobile__accept");
+  // }
+
   await page.waitForSelector(locator);
   return page;
 }

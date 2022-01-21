@@ -14,17 +14,17 @@
       {
         "name": "Монитор Samsung Odyssey G5 ",
         "url": "https://www.dns-shop.ru/product/0ac92a68c0ec3332/27-monitor-samsung-odyssey-g5-c27g55tqwi-cernyj/",
-        "price": 25000
+        "price": 50000
       }
     ],
-    "locator": ".product-card-tabs__product .product-buy__price"
+    "locator": ".product-card-top__buy .product-buy__price"
   },
   "udemy": {
     "items": [
       {
         "name": "Cypress V9- UI Automation Testing + API Testing + Frameworks ",
         "url": "https://www.udemy.com/course/cypress-io-master-class/",
-        "price": 2000
+        "price": 30000
       }
     ],
     "locator": ".sidebar-container--purchase-section--17KRp .udlite-sr-only"
@@ -34,7 +34,7 @@
       {
         "name": "LinguaLeo 1 year Premium ",
         "url": "https://lingualeo.com/ru/premium-gift",
-        "price": 2000
+        "price": 5000
       }
     ],
     "locator": ".ll-leokit__button__content span"
