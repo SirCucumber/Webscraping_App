@@ -37,7 +37,7 @@ async function startTracking() {
       );
 
       let job = new CronJob(
-        "*/15 * * * * *",
+        "* */59 * * * *",
         function () {
           checkPrice(page, item, itemsList[property].locator);
         },
