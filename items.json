@@ -4,37 +4,17 @@
       {
         "name": "Sennheiser HD 280 Pro ",
         "url": "https://www.citilink.ru/product/naushniki-sennheiser-hd-280-pro-3-5-mm-monitornye-chernyi-506845-590049/",
-        "price": 7000
+        "price": 6000
       }
     ],
     "locator": ".ProductPrice__price.ProductHeader__price-default__price"
-  },
-  "dns": {
-    "items": [
-      {
-        "name": "Монитор Samsung Odyssey G5 ",
-        "url": "https://www.dns-shop.ru/product/0ac92a68c0ec3332/27-monitor-samsung-odyssey-g5-c27g55tqwi-cernyj/",
-        "price": 50000
-      }
-    ],
-    "locator": ".product-card-top__buy .product-buy__price"
-  },
-  "udemy": {
-    "items": [
-      {
-        "name": "Cypress V9- UI Automation Testing + API Testing + Frameworks ",
-        "url": "https://www.udemy.com/course/cypress-io-master-class/",
-        "price": 30000
-      }
-    ],
-    "locator": ".sidebar-container--purchase-section--17KRp .udlite-sr-only"
   },
   "lingualeo": {
     "items": [
       {
         "name": "LinguaLeo 1 year Premium ",
         "url": "https://lingualeo.com/ru/premium-gift",
-        "price": 5000
+        "price": 1000
       }
     ],
     "locator": ".ll-leokit__button__content span"

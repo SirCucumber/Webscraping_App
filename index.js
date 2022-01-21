@@ -14,14 +14,6 @@ async function configireBrowser(url, locator) {
   });
   const page = await browser.newPage();
   await page.goto(url);
-  // await page.setDefaultNavigationTimeout(60000);
-  // await page.setDefaultTimeout(60000);
-  // await Promise.all([page.waitForNavigation({ waitUntil: "load" })]);
-  // await page.waitForTimeout(120000);
-
-  // if (url.includes("dns")) {
-  //   page.click(".confirm-city-mobile__buttons .confirm-city-mobile__accept");
-  // }
 
   await page.waitForSelector(locator);
   return page;
@@ -32,8 +24,7 @@ async function checkPrice(page, item, locator) {
   let currentPrice = await Number(rublePrice.replace(/[^0-9.-]+/g, ""));
 
   if (currentPrice < item.price) {
-    console.log(`"Цена на ${item.name} упала до ${currentPrice}!`);
-    // sendNotification(item.name + currentPrice);
+    sendNotification(item.name + currentPrice);
   }
 }
 
@@ -61,24 +52,23 @@ async function startTracking() {
   }
 }
 
-// async function sendNotification(price) {
-//   let transporter = nodemailer.createTransport({
-//     service: "gmail",
-//     auth: {
-//       user: emailUserLogin,
-//       pass: emailUserPassword,
-//     },
-//   });
+async function sendNotification(price) {
+  let transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: emailUserLogin,
+      pass: emailUserPassword,
+    },
+  });
 
-//   let textToSend = "Новый ценник: " + price;
+  let textToSend = "Новый ценник: " + price;
 
-//   let info = await transporter.sendMail({
-//     from: "Price Tracker" + emailFromUser,
-//     to: emailToUser,
-//     subject: "Новая цена у товара!",
-//     text: textToSend,
-//   });
-//   console.log("Message sent: %s", info.messageId);
-// }
+  let info = await transporter.sendMail({
+    from: "Price Tracker" + emailFromUser,
+    to: emailToUser,
+    subject: "Новая цена у товара!",
+    text: textToSend,
+  });
+}
 
 startTracking();
